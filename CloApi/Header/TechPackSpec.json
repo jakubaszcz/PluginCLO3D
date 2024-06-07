@@ -1,0 +1,394 @@
+{
+  "version": 120, // means v1.2
+
+  "zpacPath": "output.ZPac", // [v1.1] zpac file path (this file is created only via CLO API)
+  "zprjPath": "output.ZPrj", // [v1.1] zprj file path (this file is created only via CLO API) -> [v1.2] "projectFilePath" -> "zprjPath"
+  "zrestPath": "output.zrest", // [v1.0] zrest file path (this file is created only for CLOSET). -> [v1.1] absolute path -> relative path
+
+  "lengthOfSeamLines": 355.535, // [v1.0] unit is inch. Total length of seam lines to estimate how much sewing threads are consumed.
+  "numberOfPatterns": 30, // [v1.0] total number of patterns
+  "areaOfPatterns": 0.89348, // [v1.0] unit is m^2. The consumed area of whole patterns.
+  "fitting": 0, // [v1.0] for BenefitByCLO API (0: impossible , 1 : possible)
+  "thumbnail": [ // [v1.0]
+    "thumbnail_o.png", // front thumbnail
+    "thumbnail_l.png", // left thumbnail
+    "thumbnail_b.png" // back thumbnail
+  ],
+
+  //"colorway": [], // [v1.0] deprecated since v1.2
+  "currentColorwayIndex": 0, // [v1.2]
+  "colorwayList": [ // [v1.2]
+    {
+      "id": 3814,
+      "name": "colorway 0",
+      "thumbnail": [ // colorway thumbnail front, side, back in order.
+        "colorway0_thumbnail0.png", // front
+        "colorway0_thumbnail1.png", // side
+        "colorway0_thumbnail2.png" // back
+      ],
+      "thumbnailWithAvatar": [ // colorway thumbnail with avatar
+        "colorway0_thumbnailWithAvatar0.png", // front
+        "colorway0_thumbnailWithAvatar1.png", // side
+        "colorway0_thumbnailWithAvatar2.png" // back
+      ]
+    }
+  ],
+  "modularMark" : 0, // [v1.2] to show if modular is used or not (0: not used, 1: used) (for CLO API)
+  "modularTemplateFileName": "Jacket.Double.zmdr", // [v1.2] modular structure file name (for CLO API), optional
+  "modularBlockList": [ // [v1.2], optional.
+    {
+      "id": 3813,
+      "name": "Pattern2D_4127611",
+      "type": "Body",
+      "position": "Back",
+      "singleDual": "Single",
+      "tag": "",
+      "zblcName": "Body_B.DoubleVent",
+    }
+  ],
+  // todo : sewingList
+  "patternList": [ // [v1.2]
+    {
+      "id": 3815,
+      "name": "Neck_Knit",
+      "consumptionArea": 0.956, // unit is m^2.
+      "modularBlockId": 3813, // optional
+      // todo : "thumbnail2D" :
+      // todo : "thumbnail3D" :
+      // todo : elastic, seam taping..
+      // todo : shrinkage, physical properties..
+      "center3d": [ 100.0, 129.0, 238.3 ], // center position in mm
+      "normal3d": [ 1.0, 0.0, 0.0 ],
+      "boundingSphereRadius": 30.0,
+      "fabricId": 3816, //
+      "buttonHeadInstanceList": [
+        {
+          "buttonHeadId": 3817,
+          "center3d": [ 100.0, 129.0, 238.3 ], // center position in mm
+          "normal3d": [ 1.0, 0.0, 0.0 ],
+          "boundingSphereRadius": 30.0
+        }
+      ],
+      "buttonHoleInstanceList": [
+        {
+          "buttonHoleId": 3818,
+          "center3d": [ 100.0, 129.0, 238.3 ], // center position in mm
+          "normal3d": [ 1.0, 0.0, 0.0 ],
+          "boundingSphereRadius": 30.0
+        }
+      ],
+      "graphicInstanceList": [
+        {
+          "graphicId": 3821,
+          "center3d": [ 100.0, 129.0, 238.3 ], // center position in mm
+          "normal3d": [ 1.0, 0.0, 0.0 ],
+          "boundingSphereRadius": 30.0,
+          "placement": { //
+            "patternBottomToGraphicCenter": "287.607", // the distance from pattern bottom to graphic center
+            "patternLeftToGraphicCenter": "234.458", // the distance from pattern left to graphic center
+            "patternRightToGraphicCenter": "192.237", // the distance from pattern right to graphic center
+            "patternTopToGraphicCenter": "342.501", // the distance from pattern top to graphic center
+            "patternBottomToGraphicBottom": "138.327", // the distance from pattern bottom to graphic bottom
+            "patternLeftToGraphicLeft": "192.94", // the distance from pattern left to graphic left
+            "patternRightToGraphicRight": "150.718", // the distance from pattern right to graphic right
+            "patternTopToGraphicTop": "193.222" // the distance from pattern top to graphic top
+          }
+        }
+      ],
+      "topStitchInstanceList": [
+        {
+          "topStitchId": 3819,
+          "type": 0, // 0: decor stitch on outline, 1: decor stitch on inner shape, 2: seamline stitch on outline, 3: seamline stitch on inner shape
+          "length": 100.0, // mm
+          // todo : placement
+          "center3d": [ 100.0, 129.0, 238.3 ], // center position in mm
+          "normal3d": [ 1.0, 0.0, 0.0 ],
+          "boundingSphereRadius": 30.0
+        }
+      ],
+      // todo : zipperInstanceList, zipper length per pattern
+      "zipperInstanceList": [
+        {
+          "zipperId": 3820,
+          "zipperLength": 100.0
+        }
+      ]
+    }
+  ],
+
+  "fabricList": [ // [v1.2]
+    {
+      "id": 3816,
+      "name": "NECK RIBBING",
+      "thickness": 0.86, // unit is mm.
+
+      "type": "None", //
+      "density": 330.889, // unit is g/m2
+      "content": "None", //
+      "numberOfUses": 2, // the number of this fabric used in the garment
+      "colorwayList": [ // should have the same size as "colorwayList" in root
+        {
+          "thumbnail": "colorway0_fabric0.png",
+          "rollWidth": 44.2, // roll width in inch
+          "rollYardage": 0.129389, // length of fabric roll consumed by patterns (in yardage)
+          "materialFront": {
+            "baseColor": [
+              0.705882,
+              0.137255,
+              0.164706
+            ],
+            "baseColorName": "blue",
+            "opacity": 0.5, // [0.0, 1.0]
+            "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+              {
+                "filePath": "baseColorMap.jpg",
+                "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                "type": 0 // 0: base color map, 1: (n/a), 2: (n/a), 3: normal map, 4: (n/a), 5: (n/a), 6: diffuse overaly map, 7: specular overaly map
+                // 8: (n/a), 9: (n/a), 10: glossiness map, 11: metalness map, 12: reflect map, 13: refract map, 14: fur length map, 15: fur thickness map, 16: fur density map
+              }
+            ],
+            "type": "Fabric_Matte"
+          },
+          "materialBack": {
+            "baseColor": [
+              0.705882,
+              0.137255,
+              0.164706
+            ],
+            "baseColorName": "blue",
+            "opacity": 0.5,
+            "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+              {
+                "filePath": "baseColorMap.jpg",
+                "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                "type": 0
+              }
+            ],
+            "type": "Fabric_Matte" //
+          },
+          "materialSide": {
+            "baseColor": [
+              0.705882,
+              0.137255,
+              0.164706
+            ],
+            "baseColorName": "blue",
+            "opacity": 0.5,
+            "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+              {
+                "filePath": "baseColorMap.jpg",
+                "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                "type": 0
+              }
+            ],
+            "type": "Fabric_Matte"
+          }
+        }
+      ]
+    }
+  ],
+
+  "buttonHeadList": [ // [v1.2]
+    {
+      "id": 3817,
+      "name": "Default Button",
+      "size": 10.0, // unit is mm.
+      "weight": 0.0867244, // unit is gram.
+      "numberOfUses": 1, // the number of this buttonHead used in the garment
+      "colorwayList": [ // should have the same size as "colorwayList" in root
+        {
+          "thumbnail": "colorway0_buttonhead1.png"
+        }
+      ]
+    }
+  ],
+  "buttonHoleList": [ // [v1.2]
+    {
+      "id": 3818,
+      "name": "Default ButtonHole",
+      "size": 10.0, // unit is mm.
+      "numberOfUses": 1, // the number of this buttonHole used in the garment
+      "colorwayList": [ // should have the same size as "colorwayList" in root
+        {
+          "thumbnail": "colorway0_buttonhole1.png"
+        }
+      ]
+    }
+  ],
+
+  "topStitchList": [ // [v1.2]
+    {
+      "id": 3819,
+      "name": "Default TopStitch",
+      "numberOfUses": 1, // the number of this topStitch used in the garment
+      "colorwayList": [ // should have the same size as "colorwayList" in root
+        {
+          "thumbnail": "colorway0_topstitch1.png"
+        }
+      ],
+
+      "subStitchList": [ // each topStitch has 0~5 subStitch
+        {
+          "numberOfLines": 1, // number of stitch lines per stitch property tab
+          "colorwayList": [ // should have the same size as "colorwayList" in root
+            {
+              "thumbnail": "colorway0_topstitch1_stitch1.png",
+              "material": {
+                "baseColor": [
+                  0.705882,
+                  0.137255,
+                  0.164706
+                ],
+                "baseColorName": "blue",
+                "opacity": 0.5, // [0.0, 1.0]
+                "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+                  {
+                    "filePath": "baseColorMap.jpg",
+                    "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                    "type": 0
+                  }
+                ],
+                "type": "Fabric_Matte"
+              }
+            }
+          ]
+        }
+      ],
+      "type": 0 // 0: texture type stitch, 1: obj type stitch
+    }
+  ],
+
+  "zipperList": [ // [v1.2] Not shared at the moment. As someday it will be shared, we decided to separate "zipper" from "pattern".
+    {
+      "id": 3820,
+      "name": "Zipper_1",
+      "colorwayList": [ // should have the same size as "colorwayList" in root
+        {
+          "pullerThumbnail": "colorway0_zipper_puller0.png", // [v1.0]
+          "sliderThumbnail": "colorway0_zipper_slider0.png", // [v1.0]
+          "teethThumbnail": "colorway0_zipper_teeth0.png" // [v1.0]
+        }
+      ],
+      "center3d": [ 100.0, 129.0, 238.3 ], // center position in mm
+      "boundingSphereRadius": 30.0
+    }
+  ],
+
+  "graphicList": [ // [v1.2] Not shared over patterns at the moment. As someday it will be shared over patterns, we decided to separate "graphic" from "pattern".
+    {
+      "id": 3821,
+      "name": "3 Stripes, Rubberized Print_4",
+      "artworkSize": {
+        "height": 80, // unit is mm.
+        "heightSizeRatio": 100, // [v1.1] 원본 이미지 파일 높이 대비 그래픽 높이의 비율
+        "width": 996.292, // unit is mm.
+        "widthSizeRatio": 339.106 // [v1.1] 원본 이미지 파일 너비 대비 그래픽 너비의 비율
+      },
+      "colorwayList": [ // should have the same size as "colorwayList" in root
+        {
+          "thumbnail": "colorway0_graphic0.png",
+          "materialFront": {
+            "baseColor": [
+              0.705882,
+              0.137255,
+              0.164706
+            ],
+            "baseColorName": "blue",
+            "opacity": 1.0,
+            "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+              {
+                "filePath": "baseColorMap.jpg",
+                "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                "type": 0
+              }
+            ],
+            "type": "Fabric_Matte"
+          },
+          "materialBack": {
+            "baseColor": [
+              0.705882,
+              0.137255,
+              0.164706
+            ],
+            "baseColorName": "blue",
+            "opacity": 1.0,
+            "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+              {
+                "filePath": "baseColorMap.jpg",
+                "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                "type": 0
+              }
+            ],
+            "type": "Fabric_Matte" //
+          },
+          "materialSide": {
+            "baseColor": [
+              0.705882,
+              0.137255,
+              0.164706
+            ],
+            "baseColorName": "blue",
+            "opacity": 1.0,
+            "textureList": [ // [v1.2] texture image files and relative paths (for CLO API)
+              {
+                "filePath": "baseColorMap.jpg",
+                "aiFilePath": "baseColorMap.ai", // if ai file was used..
+                "type": 0
+              }
+            ],
+            "type": "Fabric_Matte"
+          }
+        }
+      ]
+    }
+  ],
+
+
+  "information": { // [v1.1] the data given by user in Garment Information dialog in CLO
+    "styleNumber": "J8829", // Style Number
+    "name": "Skinny Jean", // Name
+    "description": "", // Description
+    "fabric": "Cotton 100%", // Fabric Information
+    "price": "$123", // Price
+    "memo": "Here is Memo", // Memo
+    "category": {
+      "parentCategory": "Bottom",
+      "subCategory": "Pants"
+    }
+  },
+
+  "rendering": { // [v1.0]
+    "backgroundColor": [ // background rgb, range from 0.0 to 1.0, not from 0 to 255.
+      0.85,
+      0.85,
+      0.85
+    ],
+    "cameraMatrix": [ // row vector 0, 1, 2 of "local to world camera matrix"
+      1.0,
+      0.000166,
+      -0.001024,
+      0.352125,
+      0.0,
+      0.987069,
+      0.160306,
+      2592.8,
+      0.001039,
+      -0.160306,
+      0.987068,
+      7973.05
+    ],
+    "colorwayIndex": 1, // colorway index to render. only used as input for CLOSET renderer
+    "existCustomView": 1, // 0: no custom views, 1: custom view exists
+    "height": 640, // [1, 10000] in pixel
+    "lightAngle": 0, // [-180, 180]
+    "lightIntensity": 1, // [0.0, 4.0]
+    "mediumType": 0, // 0: single image, 1: turntable images
+    "noiseThreshold": 0.01, // [0.001, 0.015]
+    "renderAllColorways": 0, // 0: render only the current colorway, 1: render all colorways
+    "transparentBackground": 0, // 0: opaque, 1: transparent
+    "turntableDirection": 0, // 0: counterclockwise(default), 1: clockwise
+    "turntableImageCount": 4, // should be one of {4, 8, 16, 32}. only valid using "turntable image type".
+    "viewpoint": 0, // 0: current view , 1: custom views . invalid with "turntable image" option selected.
+    "width": 480 // unit is pixel, [1, 10000]
+  }
+}
